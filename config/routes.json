@@ -1,0 +1,77 @@
+{
+  "models": {
+    "cheap": "claude-haiku-4-5",
+    "balanced": "claude-sonnet-5-5",
+    "powerful": "claude-opus-5-5"
+  },
+  "token_weights": {
+    "cheap": 1,
+    "balanced": 2,
+    "powerful": 4
+  },
+  "classification_rules": {
+    "cheap_keywords": [
+      "explica",
+      "resumo",
+      "simples",
+      "rápido",
+      "formato",
+      "lint",
+      "typo",
+      "traduz",
+      "pergunta"
+    ],
+    "balanced_keywords": [
+      "bug",
+      "debug",
+      "teste",
+      "test",
+      "feature",
+      "implementa",
+      "refator",
+      "simplifica",
+      "review",
+      "design",
+      "performance",
+      "otimiza",
+      "crie",
+      "cria ",
+      "escreve",
+      "roteiro",
+      "post",
+      "carrossel",
+      "reel",
+      "cronograma",
+      "agenda",
+      "script",
+      "código",
+      "codigo",
+      "corrige",
+      "conserta",
+      "edita"
+    ],
+    "powerful_keywords": [
+      "arquitetura",
+      "segurança",
+      "estratégia",
+      "strategy",
+      "migração",
+      "migraçao",
+      "ultrareview",
+      "plano completo",
+      "pesquisa profunda"
+    ]
+  },
+  "context_thresholds": {
+    "cheap_max_files": 3,
+    "cheap_max_lines": 200,
+    "balanced_max_files": 10,
+    "balanced_max_lines": 2000
+  },
+  "fallback_strategy": {
+    "retry_on_fail": true,
+    "escalate_cheap_to": "balanced",
+    "escalate_balanced_to": "powerful"
+  },
+  "_leia": "Escada de preço: do nível mais barato para o mais caro. Na dúvida, o nível mais barato. token_weights é a proporção de preço entre os níveis; ajuste para os modelos e preços que você usa."
+}
